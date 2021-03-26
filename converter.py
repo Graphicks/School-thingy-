@@ -12,6 +12,7 @@ class texttohex():
 class binarytotext():
   def __init__(self, text):
     self.text = text
+    print(chr(int(text[:8], 2)))
     
     
 class binarytohex():
