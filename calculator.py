@@ -23,23 +23,41 @@ class ImageSize():
 
     bits = int(colour_depth) * int(height) * int(width)
     print(bits, " bits\n\n")
+    user_input = input("Would you like to convert from bits to different values?  \n1. Yes \n2. No \n\nYour Option: ")
 
-    file_data_type = input("Convert to: ").lower()
-    convertion(file_data_type, bits)   
-    
+    if user_input == "1":
+      convertion(input("Convert to: \n\n1. Nibbles \n2. Bytes \n3. Kilobytes \n4. Megabytes \n5.Gigabytes \n6. Terabytes \n7.Petabytes \nYour Option: "), bits)   
 
-
+    elif user_input == "2":
+      print("Thanks for using our service!")
+  
 
 class convertion():
   def __init__(self, file_data_type, value):
     self.file_data_type = file_data_type
     self.value = value
 
-    if file_data_type == "bytes":
+
+    if file_data_type == "1":
+      print(value / 4, "nibbles")
+
+    if file_data_type == "2":
       print(value / 8, "bytes")
 
-    if file_data_type == "kb":
+    if file_data_type == "3":
       print(value / 8000, "kilobytes")
+
+    if file_data_type == "4":
+      print(value / 8000000 , "megabytes")
+
+    if file_data_type == "5":
+      print(value / 8000000000, "gigabytes")
+
+    if file_data_type == "6":
+      print(value / 8000000000000, "tb")
+
+    if file_data_type == "7":
+      print(value / 8000000000000000, "petabytes")
 
 class Selection():
   def __init__(self, convertion_tool):
@@ -55,8 +73,6 @@ class Selection():
     if convertion_tool == "3":
       BinarySelection(input("\nWhich one would you like to convert to? \n\n1. Text to binary \n2. Text to hexidecimal \n3. Binary to Text \n4. Binary to hexidecimal \n5. hexidecimal to text \n6. hexidecimal to binary \n\nYour Option: "))
       
-    else:
-      print("Stupid option!")
 
 
 class BinarySelection(): # I didn't want to do this but looks better
