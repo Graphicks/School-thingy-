@@ -8,11 +8,15 @@ class SoundSize():
 
     bits = (int(sound_resolution) * int(sample_rate) * int(seconds))
 
-    print(bits)
+    print(bits, "bits")
 
-    file_data_type = input("Convert to: ").lower()
+    user_input = input("Would you like to convert from bits to different values?  \n1. Yes \n2. No \n\nYour Option: ")
 
-    convertion(file_data_type, bits)
+    if user_input == "1":
+      convertion(input("Convert to: \n\n1. Nibbles \n2. Bytes \n3. Kilobytes \n4. Megabytes \n5. Gigabytes \n6. Terabytes \n7.Petabytes \nYour Option: "), bits)   
+
+    elif user_input == "2":
+      print("Thanks for using our service!")
 
 
 class ImageSize():
@@ -26,7 +30,7 @@ class ImageSize():
     user_input = input("Would you like to convert from bits to different values?  \n1. Yes \n2. No \n\nYour Option: ")
 
     if user_input == "1":
-      convertion(input("Convert to: \n\n1. Nibbles \n2. Bytes \n3. Kilobytes \n4. Megabytes \n5.Gigabytes \n6. Terabytes \n7.Petabytes \nYour Option: "), bits)   
+      convertion(input("Convert to: \n\n1. Nibbles \n2. Bytes \n3. Kilobytes \n4. Megabytes \n5. Gigabytes \n6. Terabytes \n7.Petabytes \nYour Option: "), bits)   
 
     elif user_input == "2":
       print("Thanks for using our service!")
@@ -68,7 +72,7 @@ class Selection():
       ImageSize(input("Input Colour Depth: "), input("Input image height: "), input("Input image width: "))
     
     if convertion_tool == "2":
-      SoundSize(input("Input Sound Resolution"), input("Input Sample Rate"), input("Input seconds: "))
+      SoundSize(input("Input Sound Resolution:  "), input("Input Sample Rate: "), input("Input seconds: "))
 
     if convertion_tool == "3":
       BinarySelection(input("\nWhich one would you like to convert to? \n\n1. Text to binary \n2. Text to hexidecimal \n3. Binary to Text \n4. Binary to hexidecimal \n5. hexidecimal to text \n6. hexidecimal to binary \n\nYour Option: "))
