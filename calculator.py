@@ -1,11 +1,12 @@
 from converter import *
 
-class SoundSize():
+class SoundSize(): # Calculates sound size 
   def __init__(self, sound_resolution, sample_rate, seconds):
     self.sound_resolution = sound_resolution
     self.sample_rate = sample_rate
     self.seconds = seconds
 
+    # Calculation for sound size is sound resolution * sample rate * second
     bits = (int(sound_resolution) * int(sample_rate) * int(seconds))
 
     print(bits, "bits")
@@ -19,14 +20,17 @@ class SoundSize():
       print("Thanks for using our service!")
 
 
-class ImageSize():
+class ImageSize(): # Calculates image size 
   def __init__(self, colour_depth, height, width):
     self.colour_depth = colour_depth
     self.height = height
     self.width = width
 
+    # Calculations for image size 
     bits = int(colour_depth) * int(height) * int(width)
+
     print(bits, " bits\n\n")
+    
     user_input = input("Would you like to convert from bits to different values?  \n1. Yes \n2. No \n\nYour Option: ")
 
     if user_input == "1":
@@ -36,7 +40,7 @@ class ImageSize():
       print("Thanks for using our service!")
   
 
-class convertion():
+class convertion(): # converts bits to larger values 
   def __init__(self, file_data_type, value):
     self.file_data_type = file_data_type
     self.value = value
@@ -63,7 +67,7 @@ class convertion():
     if file_data_type == "7":
       print(value / 8000000000000000, "petabytes")
 
-class Selection():
+class Selection(): # Selects which calculator you actually want to use 
   def __init__(self, convertion_tool):
 
     self.convertion_tool = convertion_tool

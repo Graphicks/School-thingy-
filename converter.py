@@ -1,3 +1,5 @@
+import binascii
+
 class texttobinary():
   def __init__(self, text):
     self.text = text 
@@ -12,8 +14,8 @@ class texttohex():
 class binarytotext():
   def __init__(self, text):
     self.text = text
-    print(chr(int(text[:8], 2)))
-    
+    ascii_string = "".join([chr(int(binary, 2)) for binary in text.split(" ")])
+    print(ascii_string)
     
 class binarytohex():
   def __init__(self, text):
@@ -30,3 +32,5 @@ class hextotext():
 class hextobinary():
   def __init__(self, text):
     self.text = text
+    binary_string = binascii.unhexlify(text)
+    print(binary_string.decode())
